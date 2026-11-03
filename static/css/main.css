@@ -1,0 +1,140 @@
+:root {
+  --max-width: 80%;
+  --font-sans: ui-sans-serif, sans-serif;
+  --font-mono: ui-monospace, monospace;
+  --font-size: 16px;
+  --line-height: 1.2em;
+}
+
+li {
+  list-style-position: inside;
+}
+
+html {
+  font-size: var(--font-size);
+  line-height: var(--line-height);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  text-align: justify;
+  font-family: var(--font-sans);
+  font-weight: 400;
+  max-width: var(--max-width);
+  margin: 1em auto 1em auto;
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+header h1 {
+  display: inline-block;
+  line-height: 1em;
+  font-weight: 800;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1em;
+  margin: 1.2em 0 0.4em 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  margin: 0 0 0.6em 0;
+}
+
+button {
+  border: 1px solid var(--color-text-muted);
+  border-radius: 3px;
+  background-color: var(--color-bg);
+}
+
+a {
+  color: var(--color-link);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--color-link-hover);
+  text-decoration: underline;
+}
+
+hr {
+  margin: 0.6em 0 1em 0;
+  color: var(--color-text-muted);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0.15em 0 0.15em 0;
+}
+
+@media (max-width: 625px) {
+  header {
+    flex-direction: column;
+  }
+}
+
+header li {
+  color: var(--color-text-muted);
+  list-style-type: none;
+  display: inline-block;
+}
+
+header nav li {
+  margin-right: 1px;
+}
+
+header nav li button {
+  height: 20px;
+  width: 20px;
+}
+
+header nav ul li:not(:first-child)::before {
+  content: "│";
+  margin-right: 1px;
+}
+
+header nav ul {
+  font-size: 0em;
+}
+
+header nav ul li {
+  font-size: var(--font-size);
+}
+
+section[role="doc-bibliography"] {
+  padding-left: 2.5em;
+  counter-reset: reversed(item);
+}
+
+section[role="doc-bibliography"] li {
+  list-style-position: outside;
+}
+
+section[role="doc-bibliography"] li::marker {
+  content: counter(item)". ";
+  counter-increment: item -1;
+  text-align: start;
+}
+
+section[role="doc-bibliography"] li>* {
+  display: inline;
+}
+
+section[role="doc-bibliography"] li span.prefix {
+  display: none;
+}

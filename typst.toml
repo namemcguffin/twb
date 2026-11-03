@@ -1,0 +1,8 @@
+[package]
+name = "twb"
+version = "0.1.0"
+entrypoint = "lib.typ"
+authors = ["namemcguffin"]
+license = "EUPL-1.2"
+description = "typst website builder."
+exclude = ["/scripts/"]
